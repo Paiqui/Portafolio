@@ -1,4 +1,3 @@
-/*Fuentes*/
 @font-face{
     font-family: 'Monument';
     src: url('/fuentes/MonumentExtended-Ultrabold.otf') format('truetype');
@@ -8,148 +7,156 @@
     font-family: 'Montserrat';
     src: url('/fuentes/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
 }
-
+:root{
+    --violeta-clarito:#ce97ff;
+    --blanquito-gris: #e0e0e0;
+    --sombra-titulo: 0 0 10px rgba(91, 52, 114, 0.7),
+                 0 0 20px rgba(236, 174, 255, 0.5),
+                 0 0 30px rgba(198, 114, 255, 0.3);
+    --violeta-oscuro: #2b1f45;
+}
 /* Estilos generales */
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita scroll horizontal */
+    overflow-x: hidden;
 }
 
 /* ......... ENCABEZADO TOTAL .........*/
 .encabezado{
-    position: relative; /* Para que el nav y el contenido se posicionen respecto a esta sección */
+    position: relative;
     min-height: 100vh;
     background-image: url("/imagenes/encabezado.png");
-    background-size: cover; /* La imagen cubre toda el área */
-    display: flex; /* Para centrar el contenido fácilmente */
+    background-size: cover;
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente el contenido */
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
-    display: flex; /* Para centrar el contenido fácilmente */
-    padding-left: 5%; /* Padding para el texto */
-    box-sizing: border-box; /* Asegura que el padding no afecte el width/height total */
+    justify-content: center; 
+    align-items: flex-start;
+    display: flex;
+    padding-left: 5%; 
+    box-sizing: border-box;
 }
 
 /* Barra de Navegación */
 .navegacion {
-    position: absolute; /* Posiciona el nav sobre el encabezado */
-    top: 0; /* En la parte superior */
-    left: 0; /* Alineado a la izquierda */
-    width: 100%; /* Ocupa todo el ancho */
-    padding: 20px 5%; /* Padding lateral para que no toque los bordes */
-    box-sizing: border-box; /* Asegura que el padding no afecte el width total */
-    z-index: 10; /* Asegura que esté por encima del contenido del encabezado */
-    display: flex; /* Para alinear los elementos en línea */
-    justify-content: space-between; /* Espacio entre los elementos */
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    padding: 20px 5%;
+    box-sizing: border-box; 
+    z-index: 10; 
+    display: flex; 
+    justify-content: space-between; 
 }
 
 .logo img{
-    height: 50px; /* Ajusta la altura de tu logo según sea necesario */
-    width: auto; /* Mantener la proporción */
-    display: block; /* Para centrarlo mejor si es necesario, o controlar márgenes */
-    margin-right: 20px; /* Espacio entre el logo y los enlaces */
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-right: 20px;
 }
 
 .navegacion .nav-links {
-    list-style: none; /* Elimina los puntos de la lista */
+    list-style: none; 
     margin: 0;
-    padding: 0; /* Elimina el padding */
-    padding-top: 15px; /* Espacio superior para alinear con el logo */
-    display: flex; /* Alinea los enlaces en línea */
-    gap: 20px; /* Espacio entre los enlaces */
+    padding: 0;
+    padding-top: 15px;
+    display: flex;
+    gap: 20px;
 }
 
 .navegacion .nav-links li {
-    margin-left: 20px; /* Espacio entre los enlaces */
+    margin-left: 20px;
 }
 
 .navegacion .nav-links li a {
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
     color: white;
     font-size: 1.2em;
-    transition: opacity 0.3s ease; /* Transición suave al cambiar la opacidad */
+    transition: opacity 0.3s ease;
 }
 
 .navegacion .nav-links li a:hover {
-    font-weight: bold; /* Negrita al pasar el mouse */
-    opacity: 0.7; /* Cambia la opacidad al pasar el mouse */
+    font-weight: bold;
+    opacity: 0.7; 
 }
 
 /* Barra de Navegación fin*/
+
+
 
 /*Titulo y frase del encabezado*/
 .titulo-encabezado h1{
     font-family: 'Monument', sans-serif;
     font-size: 10em;
-    margin: 0; /* Elimina el margen */
-    letter-spacing: 15px; /* Espaciado entre letras */
+    margin: 0;
+    letter-spacing: 15px; 
     line-height: 1;
     color: white;
-    text-shadow: 0 0 10px rgba(91, 52, 114, 0.7),
-                 0 0 20px rgba(236, 174, 255, 0.5),
-                 0 0 30px rgba(198, 114, 255, 0.3)
+    text-shadow: var(--sombra-titulo);
 }
 
 .titulo-encabezado p{
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4em;
-    margin-top: 1px; /* Espacio entre el título y la frase */
+    margin-top: 1px;
     color: white;
     letter-spacing: 0.5px;
-    max-width: 600px; /* Ancho máximo para que no se extienda demasiado */
+    max-width: 600px; 
 }
 /*Titulo y frase fin*/
 
+
+
 /*Barra de navegación con puntos*/
 .puntos-desplazamiento {
-    position: fixed; /* Fija la barra de navegación en la parte inferior */
-    right: 30px; /* Alineada a la derecha */
-    top: 50%; /* Centrada verticalmente */
-    transform: translateY(-50%); /* Ajusta para que esté centrada */
-    z-index: 100; /* Asegura que esté por encima de otros elementos */
-    display: flex; /* Para alinear los puntos en línea */
-    flex-direction: column; /* Puntos apilados verticalmente */
-    align-items: center; /* Centra los puntos horizontalmente */
+    position: fixed;
+    right: 30px;
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .puntos-desplazamiento .punto {
-    display: block; /* Para que cada punto ocupe su propia línea */
-    width: 10px;    /* Tamaño del punto */
+    display: block;
+    width: 10px; 
     height: 10px;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.5); /* Color tenue */
-    border-radius: 50%; /* Para que sea circular */
-    margin: 8px 0; /* Espacio entre puntos */
-    cursor: pointer; /* Muestra una manito al pasar el ratón */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .puntos-desplazamiento .punto:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Más brillante al pasar el ratón */
-    transform: scale(1.2); /* Aumenta el tamaño al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2); 
 }
 
 .puntos-desplazamiento .punto.activo {
-    background-color: white; /* Blanco sólido para el punto activo */
-    transform: scale(1.3); /* Un poco más grande para el activo */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde sutil para el activo */
+    background-color: white;
+    transform: scale(1.3);
+    border: 1px solid rgba(255, 255, 255, 0.5); 
 }
 /*Barra de navegación con puntos fin*/
 .seccion {
-    min-height: 100vh; /* Cada sección ocupa al menos el alto de la ventana */
+    min-height: 100vh;
     padding: 50px 10%;
-    box-sizing: border-box; /* Asegura que el padding no afecte el width/height total */
-    display: flex; /* Para centrar el contenido */
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column; 
-    justify-content: center; /* Centra verticalmente el contenido */
+    justify-content: center;
     background-image: url("/imagenes/Fondo.png");
-    background-size: cover; /* La imagen cubre toda el área */
+    background-size: cover;
     color: white;
 }
 .seccion-sobre-mi{
-    background-color: #1f0d2b;
     color: white;
 }
 
@@ -161,58 +168,57 @@ body {
     font-size: 4em;
     text-align:left;
     margin: 0;
-    letter-spacing: 15px; /* Espaciado entre letras */
+    letter-spacing: 15px;
     line-height: 1;
     color: white;
-    text-shadow: 0 0 10px rgba(91, 52, 114, 0.7),
-                 0 0 20px rgba(236, 174, 255, 0.5),
-                 0 0 30px rgba(198, 114, 255, 0.3)
+    text-shadow: var(--sombra-titulo);
 }
 
 .seccion p{
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
-    margin-top: 20px; /* Espacio entre el título y el párrafo */
+    margin-top: 20px; 
     color: white;
-    line-height: 1.6; /* Mejora la legibilidad */
-    max-width: 750px; /* Ancho máximo para que no se extienda demasiado */
+    line-height: 1.6; 
+    max-width: 750px;
 }
+
+
 
 /* ......... SOBRE MI inicio .........*/
 
 .seccion .texto {
-    display: flex; /* Para alinear texto e imagen en línea */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    gap: 40px; /* Espacio entre el texto y la imagen */
-    align-items: center; /* Centra verticalmente texto e imagen */
-    margin-bottom: 40px; /* Espacio entre el bloque superior y educación */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px; 
 }
 
 .seccion .texto .salto-parrafo {
-    display: block; /* para que ocupe toda la línea, como un párrafo */
-    margin-top: 10px; /* espacio entre la primera parte y esta */
+    display: block; 
+    margin-top: 10px;
 }
 
 .sobre-mi-imagen {
-    flex: 1; /* La imagen ocupa una parte */
-    display: flex; /* Para centrar la imagen dentro de su contenedor */
+    flex: 1;
+    display: flex;
     justify-content: center; 
     align-items: center;
     min-width: 250px;
     max-width: 400px;
     border-radius: 20px;
-    overflow: hidden; /* Asegura que la imagen redondeada no se desborde */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
-    border: 3px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
-    padding: 5px; /* Pequeño padding interno para el efecto de borde */
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido para el borde */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .sobre-mi-imagen img {
-    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    width: 100%; 
     height: auto;
-    border-radius: 15px; /* Bordes redondeados internos para la imagen */
-    display: block; /* Elimina espacio extra debajo de la imagen */
+    border-radius: 15px; 
+    display: block;
 }
 
 /* Sección de Educación */
@@ -225,9 +231,7 @@ body {
     letter-spacing: 15px;
     line-height: 1;
     color: white;
-    text-shadow: 0 0 10px rgba(91, 52, 114, 0.7),
-                 0 0 20px rgba(236, 174, 255, 0.5),
-                 0 0 30px rgba(198, 114, 255, 0.3)
+    text-shadow:  var(--sombra-titulo);
 }
 
 .cajas-educacion {
@@ -239,9 +243,9 @@ body {
 }
 
 .caja-educacion {
-    background-color: #2b1f45;
+    background-color: var(--violeta-oscuro);
     border-radius: 15px;
-    padding: 30px; /* Espacio interno para el contenido */
+    padding: 30px; 
     flex: 1;
     min-width: 300px;
     max-width: 48%;
@@ -261,35 +265,37 @@ body {
     font-size: 1.5em;
     margin-top: 0;
     margin-bottom: 0.7px;
-    color: #ce97ff;
+    color: var(--violeta-clarito);
 }
 
 .educacion-contenido p {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.95em;
     margin-bottom: -5px;
-    color: #cccccc;
+    color: var(--blanquito-gris);
 }
 
 .educacion-contenido .periodo {
     font-weight: bold;
-    color: #e0e0e0;
+    color: white;
 }
 
 .educacion-contenido .institucion {
     font-style: italic;
-    color: #bbbbbb;
+    color: var(--blanquito-gris);
 }
 
 /* Sección educación fin*/
 
 /* ......... SOBRE MI final .........*/
 
+
+
 /* ......... HABILIDADES inicio .........*/
 
 /* Estilos específicos para la sección Habilidades */
 .seccion-habilidades {
-    padding: 80px 10%; /* Padding consistente */
+    padding: 80px 10%;
 }
 
 .seccion-habilidades h2 {
@@ -298,99 +304,98 @@ body {
 
 .habilidades-grid {
     display: grid;
-    /* Crea 3 columnas de igual tamaño, con un ancho mínimo y máximo */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px 30px; /* Espacio vertical y horizontal entre los elementos de habilidad */
-    justify-content: center; /* Centra el grid si hay espacio */
-    align-items: start; /* Alinea los ítems al inicio de su celda */
+    gap: 40px 30px;
+    justify-content: center;
+    align-items: start; 
 }
 
 .habilidad-item {
     display: flex;
-    flex-direction: column; /* Nombre arriba, barra abajo */
-    align-items: flex-start; /* Alinea texto y barra a la izquierda */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .habilidad-nombre {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
     color: white;
-    margin-bottom: 10px; /* Espacio entre el nombre y la barra */
-    text-transform: uppercase; /* Como en el boceto */
+    margin-bottom: 10px;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .barra-habilidad {
-    width: 100%; /* La barra ocupa todo el ancho disponible del item */
-    height: 20px; /* Altura de la barra */
-    background-color: transparent; /* Transparente para ver el relleno */
-    border: 2px solid white; /* Borde blanco como en el boceto */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
-    overflow: hidden; /* Importante para que el progreso no se desborde del borde redondeado */
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .progreso-habilidad {
-    height: 100%; /* El progreso ocupa toda la altura de la barra */
-    background-color: #ce97ff; /* Color violeta claro para el relleno */
-    /* El 'width' de este div se establece directamente en el HTML */
-    transition: width 0.8s ease-out; /* Animación suave del progreso al cargar la página o si cambias el width dinámicamente */
+    height: 100%;
+    background-color: var(--violeta-clarito);
+    transition: width 0.8s ease-out; 
 }
 
 /* ......... HABILIDADES fin .........*/
 
+
+
 /* ......... PROYECTOS inicio .........*/
 .seccion-proyectos {
-    padding: 80px 10%; /* Padding consistente */
+    padding: 80px 10%;
 }
 
 .proyectos-grid {
-    margin-top: 40px; /* Espacio entre el título y la cuadrícula de proyectos */
-    display: grid; /* Dos columnas, cada una ocupando el espacio disponible */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mínimo 450px para 2 columnas */
-    gap: 30px; /* Espacio entre los proyectos */
-    justify-content: center; /* Centra el grid si no hay suficientes elementos para llenar el ancho */
+    margin-top: 40px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center; 
 }
 
 .proyecto-item {
-    background-color: #2b1f45; /* Fondo de la tarjeta del proyecto */
+    background-color: var(--violeta-oscuro);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    display: flex; /* Para organizar imagen e info en fila (en pantallas grandes) */
-    flex-direction: column; /* Por defecto, apila imagen e info, se ajustará en media query */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .proyecto-item:hover {
-    transform: translateY(-8px); /* Pequeño levantamiento al pasar el ratón */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada al pasar el ratón */
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .proyecto-imagen-contenedor {
-    width: 100%; /* Altura fija para las imágenes, pero que se adapte bien */
-    height: 250px; /* Ajusta esta altura si tus imágenes tienen otra proporción */
-    overflow: hidden; /* Corta la imagen si es demasiado grande */
-    display: flex; /* Para centrar la imagen dentro del contenedor */
+    width: 100%; 
+    height: 250px; 
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f1430; /* Color de fondo si la imagen no cubre todo */
 }
 
 .proyecto-imagen-contenedor img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cubre el área del contenedor sin distorsionar, cortando si es necesario */
-    display: block; /* Elimina espacio extra */
+    object-fit: cover; 
+    display: block;
 }
 
 .proyecto-info {
     padding: 25px;
     color: white;
-    flex-grow: 1; /* Permite que la información crezca para llenar el espacio */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empuja el título hacia arriba y el texto hacia abajo */
+    justify-content: space-between;
 }
 
 .proyecto-info h3 {
@@ -398,7 +403,7 @@ body {
     font-size: 1.25em;
     margin-top: 0;
     margin-bottom: 15px;
-    color: #ce97ff;
+    color: var(--violeta-clarito);
     line-height: 1.3;
 }
 
@@ -407,24 +412,26 @@ body {
     font-size: 0.95em;
     line-height: 1.6;
     color: #cccccc;
-    margin-bottom: 0; /* Elimina margen inferior extra si el párrafo es el último */
+    margin-bottom: 0;
 }
 
 /* ......... PROYECTOS fin .........*/
 
+
 /* ......... CONTACTO inicio .........*/
 
 .seccion-contacto {
-    padding: 80px 10%; /* Padding consistente */
+    padding: 80px 10%;
     display: flex;
     flex-direction: column;
 }
 
 .rectangulito {
     width: 900px;
-    height: 10px; /* Grosor de la línea */
-    background-color: white; /* Color blanco de la línea */
-    margin-bottom: 60px; /* Espacio entre la línea y los iconos */
+    height: 10px;
+    background-color: white; 
+    margin-bottom: 60px;
+    box-shadow: var(--sombra-titulo);
 }
 
 .redes-sociales-iconos {
@@ -432,24 +439,23 @@ body {
     flex-wrap: wrap;
     justify-content: left;
     gap: 30px; 
-    max-width: 900px; /* Limita el ancho para que no se extiendan demasiado en pantallas grandes */
-    margin: 0 auto;
+    max-width: 900px;
 }
 
 .icono-social img{
     justify-content: left;
     align-items: left;
-    width: 120px; /* Tamaño del círculo */
-    height: 120px; /* Tamaño del círculo */
-    border-radius: 50%; /* Hace el elemento completamente circular */
-    background-color: transparent; /* Fondo transparente */
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    background-color: transparent;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .icono-social:hover {
-    transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
-    border-radius: 50%; /* Hace el elemento completamente circular */
+    transform: scale(1.1);
+    border-radius: 50%;
     box-shadow: 0 0 10px rgba(91, 52, 114, 0.7),
                  0 0 20px rgba(236, 174, 255, 0.5),
                  0 0 30px rgba(198, 114, 255, 0.3)
@@ -457,12 +463,13 @@ body {
 
 /* ......... CONTACTO fin .........*/
 
-/* Ajustes para pantallas más pequeñas ( para que sea más responsive ulala) */
 
-@media (min-width: 900px) { /* Ajusta el breakpoint si prefieres 3 columnas antes */
+
+/* Ajustes para diferentes pantallas ( para que sea más responsive ulala) */
+
+@media (min-width: 900px) {
     .proyectos-grid {
-        /* Para pantallas más grandes, intentar 3 columnas */
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min para 3 columnas */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
@@ -473,87 +480,165 @@ body {
 }
 
 @media (max-width: 768px) {    
-    .seccion-proyectos {
+    .seccion h2{
+        font-size: 2.5em;
+    }
+
+    .seccion{
         padding: 60px 5%;
+        background-image: none;
+        background: linear-gradient(to top right, #330033 0%, #1a001a 100%);
     }
 
-    .proyectos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Una sola columna en móviles */
-        gap: 30px;
-    }
-
-    .proyecto-item {
-        flex-direction: column; /* Asegura que estén apilados en móviles */
-    }
-
-    .proyecto-imagen-contenedor {
-        height: 200px; /* Altura menor de imagen en móviles */
-    }
-
-    .encabezado {
-        padding-left: 5%; /* Menos padding en pantallas pequeñas */
-    }
-
-    .titulo-encabezado h1 {
-        font-size: clamp(3em, 8vw, 10em); /* Tamaño de fuente adaptable */
-        letter-spacing: 10px; /* Reduce el espaciado entre letras */
-    }
-
-    .titulo-encabezado p {
-        font-size: 1.2em; /* Reduce el tamaño de la frase */
+    #seccion-habilidades h2{
+        letter-spacing: 2px;
     }
 
     .navegacion {
-        padding-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
 
-    .navegacion .nav-links {
-        margin-top: 5px;
-        gap: 10px; /* Espacio reducido entre enlaces */
+    .nav-link{
+        gap: 10px;
     }
 
-    .navegacion .nav-links li{
-        margin: 0 10px;
+    .navegacion .nav-links li a{
+        font-size: 0.8em;
     }
 
     .puntos-desplazamiento {
-        right: 15px; /* Ajusta la posición de los puntos */
+        display: none;
     }
 
-    .seccion-habilidades {
-        padding: 60px 5%;
+    .rectangulito{
+        width: 90%;
+        margin-bottom: 20px;
     }
 
-    .seccion-habilidades h2 {
-        font-size: 2.5em;
-        text-align: center; /* Centra el título en móviles */
-       
+    .titulo-encabezado h1 {
+        font-size: 4em;
+    }
+
+    .educacion-contenido h3 {
+        font-size: 2em;
+        letter-spacing: 5px;
+    }
+
+    .titulo-encabezado p {
+        font-size: 1em;
+        max-width: 100%;
+        margin-top: 5px;
+    }
+
+    .cajas-educacion {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caja-educacion {
+        min-width: unset;
+        max-width: 100%;
     }
 
     .habilidades-grid {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-        gap: 30px; /* Espacio entre habilidades apiladas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
-    .habilidad-item {
-        align-items: center; /* Centra el texto y la barra en móviles */
+    .proyectos-grid {
+        grid-template-columns: 2fr;
+        gap: 25px;
     }
 
-    .seccion-contacto {
-        padding: 60px 5%;
+    .redes-sociales-iconos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
-    .seccion-contacto h2 {
+    .encabezado {
+    background-image: none;
+    background: linear-gradient(to top right, #16021b 0%, #693684 100%);
+}
+}
+
+@media (max-width: 620px){
+    .seccion h2{
         font-size: 2.5em;
     }
 
-    .rectangulito {
-        width: 180px; /* Línea más corta en móviles */
-        margin-bottom: 40px;
+    .seccion{
+        padding: 60px 5%;
+        background-image: none;
+        background: linear-gradient(to top right, #330033 0%, #1a001a 100%);
     }
 
-    .icono-social {
-        width: 110px; /* Iconos más pequeños en móviles */
-        height: 110px;
+    #seccion-habilidades h2{
+        letter-spacing: 2px;
     }
+
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .nav-link{
+        gap: 10px;
+    }
+    .navegacion .nav-links li a{
+        font-size: 0.8em;
+    }
+
+    .puntos-desplazamiento {
+        display: none;
+    }
+
+    .titulo-encabezado h1 {
+        font-size: 4em;
+    }
+
+    .educacion-contenido h3 {
+        font-size: 2em;
+        letter-spacing: 5px;
+    }
+
+    .titulo-encabezado p {
+        font-size: 1em;
+        max-width: 100%;
+        margin-top: 5px;
+    }
+
+    .cajas-educacion {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caja-educacion {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    .habilidades-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .redes-sociales-iconos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .encabezado {
+    background-image: none;
+    background: linear-gradient(to top right, #16021b 0%, #693684 100%);
+}
 }

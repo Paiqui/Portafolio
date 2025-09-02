@@ -27,7 +27,7 @@ body {
 .encabezado{
     position: relative;
     min-height: 100vh;
-    background-image: url("/imagenes/encabezado.png");
+    background-image: url("imagenes/encabezado.png");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -152,7 +152,7 @@ body {
     display: flex;
     flex-direction: column; 
     justify-content: center;
-    background-image: url("/imagenes/Fondo.png");
+    background-image: url("imagenes/Fondo.png");
     background-size: cover;
     color: white;
 }
